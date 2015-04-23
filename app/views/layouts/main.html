@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>KittyFound.com| <%= @page_title || "kittyfound.com" %></title>
+		<%= stylesheet_link_tag('application', :media => 'all') %>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Kitty Found</h1>
+		</div>
+		<div id ="main">
+			<% if !flash[:notice].blank? %>
+	  		<div class="notice">
+	    		<%= flash[:notice] %>
+	  		</div>
+			<% end %>
+			<div id="content">
+				<%= yield %>
+			</div>
+		</div>
+		<div id="footer">
+			<p id="copyright">&copy; kittyfound.com </p>
+		</div>
+	</body>
+</html>
