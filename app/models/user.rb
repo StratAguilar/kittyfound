@@ -7,14 +7,23 @@ class User < ActiveRecord::Base
 
 	validates :first_name,	:presence => true,
 													:length => { :maximum => 25}
+
 	validates :last_name, 	:presence => true, 
 													:length => { :maximum => 50}
+
 	validates :email, 			:presence => true,
 													:uniqueness => true,
-													:length => 255,
-													:format => EMAIL_REGEX
+													:length => { :maximum => 255},
+													:format => EMAIL_REGEX,
 													:confirmation => true
-	validate :phone, 				:length => { :maximum => 10}
-	validate :type,					:presence => true,
-													:length => { :maximu => 3}
+
+	validates :username, 		:presence => true,
+													:uniqueness => true,
+													:length => { :maximum => 50}
+
+	validates :phone, 			:length => { :maximum => 10}
+
+	validates :user_type,		:presence => true,
+													:length => { :maximum => 3}
+
 end

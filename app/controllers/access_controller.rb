@@ -2,6 +2,8 @@ class AccessController < ApplicationController
 
 	layout 'main'
 
+	before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
+	
   def index
   	# display text and links
   end
@@ -11,8 +13,8 @@ class AccessController < ApplicationController
   end
 
   def attempt_login
-  	if params[:username].present? && params[:password].present?
-  		found_user = User.where(:username => params[:username]).first
+  	if params[:email].present? && params[:password].present?
+  		found_user = User.where(:email => params[:email]).first
 
   		if found_user
   			authorized_user = found_user.authenticate(params[:password])
@@ -20,14 +22,14 @@ class AccessController < ApplicationController
   	end
 
   	if authorized_user
-  		session[:user_id] = authorized_user.user_id
+  		session[:user_id] = authorized_user.id
   		session[:useremail] = authorized_user.email
 
   		flash[:notice] = "Logged In"
-  		redirect_to(:action => 'index')
+  		redirect_to(:controller => 'posts', :action => 'lost')
   	else
   		flash[:notice] = "Invalid username/password combiniation."
-  		redirect_to(action => 'login')
+  		redirect_to(:action => 'login')
   	end
   end
 

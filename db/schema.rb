@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423004848) do
+ActiveRecord::Schema.define(version: 20150424013136) do
+
+  create_table "cat_breeds", force: :cascade do |t|
+    t.string   "breed",              limit: 30,  null: false
+    t.string   "coat",               limit: 40
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "cats", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -28,16 +39,19 @@ ActiveRecord::Schema.define(version: 20150423004848) do
   add_index "cats", ["post_id"], name: "index_cats_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "user_id",     limit: 4
-    t.integer  "type",        limit: 4,     default: 0,     null: false
-    t.string   "title",       limit: 60,                    null: false
-    t.text     "description", limit: 65535,                 null: false
-    t.binary   "image",       limit: 65535
-    t.string   "location",    limit: 255
-    t.boolean  "expired",     limit: 1,     default: false, null: false
+    t.integer  "user_id",            limit: 4
+    t.integer  "post_type",          limit: 4,     default: 0,     null: false
+    t.string   "title",              limit: 60,                    null: false
+    t.text     "description",        limit: 65535,                 null: false
+    t.string   "city",               limit: 50
+    t.boolean  "expired",            limit: 1,     default: false, null: false
     t.date     "date"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
@@ -45,11 +59,12 @@ ActiveRecord::Schema.define(version: 20150423004848) do
   create_table "users", force: :cascade do |t|
     t.string   "first_name",      limit: 25
     t.string   "last_name",       limit: 50
-    t.string   "email",           limit: 255, default: "",    null: false
+    t.string   "email",           limit: 255,                 null: false
+    t.string   "username",        limit: 50
     t.string   "phone",           limit: 10
     t.string   "password_digest", limit: 255
     t.string   "string",          limit: 255
-    t.string   "type",            limit: 3,   default: "IND", null: false
+    t.string   "user_type",       limit: 3,   default: "IND", null: false
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
   end

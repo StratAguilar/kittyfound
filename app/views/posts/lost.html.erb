@@ -1,0 +1,21 @@
+<dive class= "posts index">
+	<h2>Posts</h2>
+
+	<%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
+
+	<table class="center" summary="Lost post">
+		<tr class="header">
+			<th>Date</th>
+			<th>City</th>
+			<th>Title</th>
+		</tr>
+		<% @posts.each do |post| %>
+		<tr>
+			<td class="center"> <%= post.created_at.to_s(:short) %></td>
+			<td class="center"> <%= post.city %></td>
+			<td class="center"> <%= link_to("#{post.title}", {:action => 'show', :id => post.id}) %></td>
+		</tr>
+		<% end %>
+	</table>
+</dive>
+

@@ -1,0 +1,2 @@
+module CatBreedsHelper
+end
