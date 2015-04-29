@@ -13,8 +13,8 @@ class AccessController < ApplicationController
   end
 
   def attempt_login
-  	if params[:email].present? && params[:password].present?
-  		found_user = User.where(:email => params[:email]).first
+  	if params[:username].present? && params[:password].present?
+  		found_user = User.where(:username => params[:username]).first
 
   		if found_user
   			authorized_user = found_user.authenticate(params[:password])
@@ -23,10 +23,10 @@ class AccessController < ApplicationController
 
   	if authorized_user
   		session[:user_id] = authorized_user.id
-  		session[:useremail] = authorized_user.email
+  		session[:username] = authorized_user.username
 
   		flash[:notice] = "Logged In"
-  		redirect_to(:controller => 'posts', :action => 'lost')
+  		redirect_to(:action => 'index')
   	else
   		flash[:notice] = "Invalid username/password combiniation."
   		redirect_to(:action => 'login')
@@ -35,7 +35,7 @@ class AccessController < ApplicationController
 
   def logout
   	session[:user_id] = nil
-  	session[:user_email] = nil
+  	session[:username] = nil
 
   	flash[:notice] = "Logged out"
   	redirect_to(:action => 'login')

@@ -1,2 +1,20 @@
-<h1>CatBreeds#index</h1>
-<p>Find me in app/views/cat_breeds/index.html.erb</p>
+<div class= "CatBreed index">
+	<h2>Cats Breeds</h2>
+
+	<%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
+
+	<table class="center" summary="Index catbreed">
+		<tr class="header">
+			<th>Breed</th>
+			<th>Coat</th>
+			<th>Image</th>
+		</tr>
+		<% @catbreeds.each do |cats| %>
+		<tr>
+			<td class="center"> <%= cats.breed %></td>
+			<td class="center"> <%= cats.coat %></td>
+			<td></td>
+		</tr>
+		<% end %>
+	</table>
+</div>

@@ -8,16 +8,21 @@ class PostsController < ApplicationController
     @posts = Post.lost.newest_first
   end
 
+  def found 
+    @posts = Post.found.newest_first
+  end
+
   def show
     @post = Post.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    @post = Post.new()
   end
 
   def create 
     @post = Post.new(post_params)
+    @post.user_id = session[:user_id]
     if @post.save
       flash[:notice] = "Post created successfully"
       redirect_to(:action => 'lost')
@@ -35,19 +40,26 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:notice] = "Post updated successfully."
-      redirect_to(:action => 'show', id => @page.id)
+      redirect_to(:controller => 'users', :action => 'postshow')
     else
       render('edit')
     end
   end
 
   def delete
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    post = Post.find(params[:id]).destroy
+    flash[:notice] = "Post destroyed successfully."
+    redirect_to(:controller => 'users', :action => 'postshow')
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:type, :title, :description, :city, :date)
+      params.require(:post).permit(:post_type, :title, :description, :city, :date, :county, :image)
     end
 
 end

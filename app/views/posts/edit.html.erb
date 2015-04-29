@@ -1,2 +1,18 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<%= link_to("<< Back to My Posts", {:controller => 'users', :action => 'postshow'}, :class => 'back-link') %>
+
+<div class="post edit">
+  <h2>Update Post</h2>
+
+  <%= form_for(	:post, 
+  						 	:url => {:action => 'update', 
+  						 	:id => @post.id}, 
+  						 	:html => { :multipart => true }) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Page") %>
+    </div>
+
+  <% end %>
+</div>

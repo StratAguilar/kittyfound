@@ -25,5 +25,13 @@ class User < ActiveRecord::Base
 
 	validates :user_type,		:presence => true,
 													:length => { :maximum => 3}
+	validates :password, 		:presence => true,
+													:length => { :minimum => 8},
+													:length => { :maximum => 30}
 
+	validates :password_confirmation, :presence => true
+
+	has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "50x50#"}
+	validates_attachment :image, 
+		:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"]}
 end

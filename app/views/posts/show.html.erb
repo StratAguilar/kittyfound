@@ -1,5 +1,5 @@
 
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<%= link_to("<< Back to List", {:action => 'lost'}, :class => 'back-link') %>
 
 <div class="Post show">
   <h2>Show Page</h2>
@@ -25,6 +25,19 @@
       <th>Created</th>
       <td><%= @post.created_at %></td>
     </tr>
+    <tr>
+      <th>Image</th>
+      <td><%= image_tag @post.image.url(:medium) %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @post.created_at %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @post.created_at %></td>
+    </tr>
+
   </table>
 
 </div>

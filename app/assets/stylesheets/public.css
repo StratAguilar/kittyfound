@@ -23,7 +23,8 @@ a:hover {}
 
 .clear { clear: both; }
 .center { text-align: center; }
-
+.right { text-align: right;}
+.left {text-align: left;}
 /* Structure */
 #header { height: 4em; padding-top: 1em; text-align: center; 
   background: #993120; color: #FFFFFF; }
@@ -33,7 +34,7 @@ a:hover {}
   background: #94B26F; color: #4C2516; }
 #content { padding: 10px; }
 #footer { clear: both; height: 2.5em; text-align: right;
-  background: #4C2516 url('/assets/footer_gradient.png') repeat-y 0 0; color: #F8F8F8; }
+  background: #4C2516 url('/assets/images/footer_gradient.png') repeat-y 0 0; color: #F8F8F8; }
 #footer p { margin: 0; padding: 0.5em 1em; }
 
 /* Navigation */

@@ -1,21 +1,28 @@
-<dive class= "posts index">
-	<h2>Posts</h2>
-
+<div class= "posts index">
+	<h2>Lost (=^･ｪ･^=)</h2>
+	<%= link_to("<< back", {:controller => 'access', :action => 'index'}) %>
 	<%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
 
-	<table class="center" summary="Lost post">
+	<table class="center" summary="Lost post" border = "0">
 		<tr class="header">
-			<th>Date</th>
-			<th>City</th>
-			<th>Title</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
 		</tr>
 		<% @posts.each do |post| %>
-		<tr>
-			<td class="center"> <%= post.created_at.to_s(:short) %></td>
-			<td class="center"> <%= post.city %></td>
-			<td class="center"> <%= link_to("#{post.title}", {:action => 'show', :id => post.id}) %></td>
-		</tr>
+			<tr>
+				<td class="right" >
+				<% if  post.image.present? %>
+        	<%= image_tag post.image.url(:thumb) %> 
+      	<% else %>
+        	<%= image_tag "blank_50.jpg" %>
+      	<% end %>
+				</td>
+				<td class="left"> <%= post.created_at.strftime("%^a, %^b %-d")  %>
+					<%= link_to("#{post.title}",{:action => 'show', :id => post.id}) %></br>
+					<%= "(#{post.city})" %></td>
+				<td class="center"> 
+			</tr>
 		<% end %>
 	</table>
-</dive>
+</div>
 

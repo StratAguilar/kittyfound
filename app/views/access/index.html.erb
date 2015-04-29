@@ -1,1 +1,10 @@
-<% @page_title = "Admin Menu" %>
+<% @page_title = 'Home Page' %>
+
+
+<div class="user home">
+  <h2>Welcome</h2>
+  </br></br></br>
+  <p class='center'><%= link_to("Lost Cats", {:controller => 'posts', :action => 'lost'})%> </p>
+  <p class='center'><%= link_to("Found Cats", {:controller => 'posts', :action => 'found'})%> </p>
+
+</div>

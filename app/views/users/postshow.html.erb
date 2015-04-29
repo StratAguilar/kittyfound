@@ -1,0 +1,35 @@
+<div class= "posts index">
+	<h2>My Posts</h2>
+
+<%= link_to("<< Back", {:action => 'account'}, :class => 'back-link') %>
+	<table class="center" summary="Lost post" border = "0">
+		<tr class="header">
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</tr>
+		<% @posts.each do |post| %>
+		<tr>
+			<td class="left"> <%= post.created_at.strftime("%^a, %^b %-d")  %></br>
+				<%= link_to("#{post.title}",{:action => 'show', :id => post.id}) %></br>
+				<%= "(#{post.city})" %></td>
+			<td class="center"> 
+				<% if  post.image.present? %>
+        	<%= image_tag post.image.url(:thumb) %> 
+      	<% else %>
+        	<%= image_tag "blank_50.jpg" %>
+      	<% end %>
+			</td>
+			<td class="actions">
+        <%= link_to("Edit", { :controller => 'posts', 
+        											:action => 'edit', 
+        											:id => post.id}, 
+        											:class => 'post edit') %>
+        <%= link_to("Delete", { :controller => 'posts', 
+        												:action => 'delete', 
+        												:id => post.id}, 
+        												:class => 'post delete') %>
+      </td>
+		</tr>
+		<% end %>
+	</table>
+</div>

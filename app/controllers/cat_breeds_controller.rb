@@ -3,6 +3,7 @@ class CatBreedsController < ApplicationController
 	layout 'main'
   
   def index
+  	@catbreeds = CatBreed.sorted
   end
 
   def new

@@ -1,29 +1,6 @@
 Rails.application.routes.draw do
 
-
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/delete'
-
-  get 'cat_breeds/index'
-
-  get 'cat_breeds/new'
-
-  get 'cat_breeds/edit'
-
-  get 'cat_breeds/delete'
-
-  get 'posts/index'
-
-  get 'posts/show'
-
-  get 'posts/new'
-
-  get 'posts/edit'
-
-  get 'posts/delete'
+  root 'access#index'
 
   get 'view' => 'access#index'
 

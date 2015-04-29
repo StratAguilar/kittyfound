@@ -1,0 +1,27 @@
+<div class= "posts index">
+	<h2>found (^人^)</h2>
+	<%= link_to("<< back", {:controller => 'access', :action => 'index'}) %>
+	<%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
+
+	<table class="center" summary="found post" border = "0">
+		<tr class="header">
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</tr>
+		<% @posts.each do |post| %>
+		<tr>
+			<td class="right"> 
+				<% if  post.image.present? %>
+        	<%= image_tag post.image.url(:thumb) %> 
+      	<% else %>
+        	<%= image_tag "blank_50.jpg" %>
+      	<% end %>
+			</td>
+			<td class="left" border = "0"> <%= post.created_at.strftime("%^a, %^b %-d")  %>
+				<%= link_to("#{post.title}",{:action => 'show', :id => post.id}) %></br>
+				<%= "(#{post.city})" %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+
