@@ -1,0 +1,15 @@
+<%= error_messages_for(@catbreed) %>
+
+<table summary="Post form fields">
+      <tr>
+        <th><%= f.label(:breed) %></th>
+        <td><%= f.text_field(:breed) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:coat) %></th>
+        <td><%= f.text_field(:coat) %></td>
+      </tr>
+      <tr>
+        <th><%= f.file_field(:image) %></th>
+      </tr>
+    </table>

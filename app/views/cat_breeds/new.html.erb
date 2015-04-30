@@ -1,2 +1,14 @@
-<h1>CatBreeds#new</h1>
-<p>Find me in app/views/cat_breeds/new.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="Breed new">
+  <h2>Create Breed</h2>
+
+  <%= form_for(:catbreed, :url => {:action => 'create'}, :html => { :multipart => true }) do |f| %>
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Breed") %>
+    </div>
+
+  <% end %>
+</div>

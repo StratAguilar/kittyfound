@@ -27,7 +27,13 @@
     </tr>
     <tr>
       <th>Image</th>
-      <td><%= image_tag @post.image.url(:medium) %></td>
+      <td>
+        <% if @post.image.present? %>
+          <%= image_tag @post.image.url(:medium) %> 
+        <% else %>
+          <%= image_tag "blank_150.jpg" %>
+        <% end %>
+      </td>
     </tr>
     <tr>
       <th>Created</th>

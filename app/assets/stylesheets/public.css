@@ -21,10 +21,14 @@ table tr th, table tr td { vertical-align: top; text-align: left;
 a, a:visited { color: #993120; }
 a:hover {}
 
+.account { padding-left: 50px; }
+
 .clear { clear: both; }
 .center { text-align: center; }
 .right { text-align: right;}
 .left {text-align: left;}
+
+.bread_help {text-align: right;} 
 /* Structure */
 #header { height: 4em; padding-top: 1em; text-align: center; 
   background: #993120; color: #FFFFFF; }

@@ -19,11 +19,11 @@ a.action { float: right; padding: 2px 5px; margin: 0 0 1em 1em;
   text-decoration: none; font-size: 0.8em; text-align: center; }
 a.action:hover { background: #B6D491; }
 
+.account { padding: 20px; }
 /* small action buttons */
 .actions { width: 200px; }
 .actions a.action { float: left; min-width: 3.5em;
   padding: 1px 2px; margin: 2px 5px; font-size: 0.7em; }
-
 /* CRUD */
 .notice { height: 1.25em; padding: 0.5em; text-align: center;
   background: #B6D491; color: #4C2516; }

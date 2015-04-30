@@ -20,5 +20,6 @@ class Post < ActiveRecord::Base
   scope :found, lambda { where(:post_type => 1)}
   scope :newest_first, lambda { order("posts.created_at DESC")}
   scope :myposts, lambda {where(:user_id => session[:user_id])}
+  scope :not_expired, lambda {where(:expired => false)}
 
 end

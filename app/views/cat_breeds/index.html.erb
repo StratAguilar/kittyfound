@@ -1,19 +1,22 @@
 <div class= "CatBreed index">
 	<h2>Cats Breeds</h2>
-
+	<!--
 	<%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
-
+ -->
 	<table class="center" summary="Index catbreed">
 		<tr class="header">
 			<th>Breed</th>
 			<th>Coat</th>
-			<th>Image</th>
+			<th>&nbsp;</th>
 		</tr>
 		<% @catbreeds.each do |cats| %>
 		<tr>
-			<td class="center"> <%= cats.breed %></td>
-			<td class="center"> <%= cats.coat %></td>
-			<td></td>
+			<td > <%= cats.breed %></td>
+			<td > <%= cats.coat %></td>
+        <td><%= image_tag cats.image.url(:medium) %></td>
+        <!-- <td><%= link_to("Edit", {:action => 'edit', :id => cats.id}, :class => 'action edit') %><td>
+
+        -->
 		</tr>
 		<% end %>
 	</table>

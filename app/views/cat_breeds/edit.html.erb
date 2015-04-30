@@ -1,2 +1,16 @@
-<h1>CatBreeds#edit</h1>
-<p>Find me in app/views/cat_breeds/edit.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="breed edit">
+  <h2>Update Breed</h2>
+
+  <%= form_for(:catbreed, :url => {:action => 'update', :id => @catbreed.id},  
+  							:html => { :multipart => true }) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Breed") %>
+    </div>
+
+  <% end %>
+</div>

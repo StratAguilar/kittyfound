@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   layout 'main'
 
-  before_action :confirm_logged_in, :except => [:index, :show, :logout]
+  before_action :confirm_logged_in, :except => [:index, :show, :logout, :lost, :found]
   
   def lost
     @posts = Post.lost.newest_first
