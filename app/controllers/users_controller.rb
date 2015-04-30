@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+  
   def new
   	@user = User.new
   end
@@ -35,7 +39,7 @@ class UsersController < ApplicationController
   	@user = User.find(session[:user_id])
   	if @user.update_attributes(user_params)
   		flash[:notice] = "Account data has been updated"
-  		redirect_to(:action => 'index')
+  		redirect_to(:action => 'account')
   	else 
   		render("edit")
   	end

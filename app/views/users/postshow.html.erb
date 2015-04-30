@@ -9,8 +9,8 @@
 		</tr>
 		<% @posts.each do |post| %>
 		<tr>
-			<td class="left"> <%= post.created_at.strftime("%^a, %^b %-d")  %></br>
-				<%= link_to("#{post.title}",{:action => 'show', :id => post.id}) %></br>
+			<td class="left"> <%= post.created_at.strftime("%^a, %^b %-d") %></br>
+				<%= link_to("#{post.title}",{:action => 'show', :id => post.id}, :class => 'title-post') %></br>
 				<%= "(#{post.city})" %></td>
 			<td class="center"> 
 				<% if  post.image.present? %>

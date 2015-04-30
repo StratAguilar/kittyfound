@@ -1,5 +1,5 @@
 
-<%= link_to("<< Back to List", {:action => 'lost'}, :class => 'back-link') %>
+<%= link_to("<< Back to List", {:action => 'postshow'}, :class => 'back-link') %>
 
 <div class="Post show">
   <h2>Show Page</h2>
@@ -22,8 +22,8 @@
       <td><%= @post.date %></td>
     </tr>
     <tr>
-      <th>Post on Created</th>
-      <td><%= @post.created_at.strftime("%^a, %^b %-d")  %></td>
+      <th>Post Created</th>
+      <td><%= @post.created_at %></td>
     </tr>
     <tr>
       <th>Image</th>
@@ -42,10 +42,6 @@
     <tr>
       <th>Color</th>
       <td><%= @post.cat_color %></td>
-    </tr>
-    <tr>
-      <th>Contact Email</th>
-      <td><%= @user.email %></td>
     </tr>
 
   </table>

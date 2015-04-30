@@ -26,7 +26,7 @@ a.action:hover { background: #B6D491; }
   padding: 1px 2px; margin: 2px 5px; font-size: 0.7em; }
 /* CRUD */
 .notice { height: 1.25em; padding: 0.5em; text-align: center;
-  background: #B6D491; color: #4C2516; }
+  background: #F5F5F5; color: #4C2516; }
 .back-link { font-size: 0.8em; margin-bottom: 1em; }
 .form-buttons { text-align: center; margin: 1em 0; }
 

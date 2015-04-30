@@ -25,6 +25,53 @@
         <td><%= f.text_area(:description, :size => '40x10') %></td>
       </tr>
       <tr>
+        <th><%= f.label("Breed") %> </th>
+        <td><%= f.select :cat_breed, 
+        [['Abyssinian','Abyssinian'],
+        ['American Shorthair','American Shorthair'],
+        ['Bengal','Bengal'],
+        ['Burmese','Burmese'],
+        ['Dwarf','Dwarf'],
+        ['Javanese','Javanese'],
+        ['Maine Coon','Maine Coon'],
+        ['Manx','Manx'],
+        ['Minskin','Minskin'],
+        ['Ocicat','Ocicat'],
+        ['Persian','Persian'],
+        ['Ragdoll','Ragdoll'],
+        ['Russian Blue','Russian Blue'],
+        ['Scottish Fold','Scottish Fold'],
+        ['Siamese','Siamese'],
+        ['Sphynx','Sphynx'],
+        ['Tonkinese','Tonkinese']] 
+        %> </td>
+      </tr>
+      <tr>
+        <th><%= f.label("Color") %> </th>
+        <td><%= f.select :cat_color, 
+        [['Chocolate','Chocolate'],
+        ['Cream','Cream'],
+        ['Black','Black'],
+        ['Blue','Blue'],
+        ['White','White'],
+        ['Red','Red'],
+        ['Gray','Gray'],
+        ['Silver','Silver'],
+        ['Calico','Calico'],
+        ['Yellow','Yellow'],
+        ['Brown','Brown']] 
+        %> </td>
+      </tr>
+      <tr>
+        <th><%= f.label("Coat") %> </th>
+        <td><%= f.select :cat_coat, 
+        [['Short',0],
+        ['Long', 1],
+        ['Semi-Long',2],
+        ['Hairless', 3]] 
+        %> </td>
+      </tr>
+      <tr>
         <th><%= f.file_field(:image) %></th>
       </tr>
     </table>

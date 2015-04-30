@@ -31,7 +31,4 @@ class User < ActiveRecord::Base
 
 	validates :password_confirmation, :presence => true
 
-	has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "50x50#"}
-	validates_attachment :image, 
-		:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"]}
 end

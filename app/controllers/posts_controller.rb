@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(@post[:user_id])
   end
 
   def new
@@ -59,7 +60,9 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:post_type, :title, :description, :city, :date, :county, :image)
+      params.require(:post).permit( :post_type, :title, :description, 
+                                    :city, :date, :county, :image,
+                                    :cat_breed, :cat_color, :cat_coat)
     end
 
 end

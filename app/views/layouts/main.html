@@ -6,24 +6,30 @@
 	</head>
 	<body>
 		<div id="header">
-			<h1><%= link_to("KittyFound.org", {:controller => 'access', :action => 'index'}, { :style=>'color:#FFFFFF;'}) %></h1>
+
+			<%= link_to image_tag("KittyFound LOGO.png", :border => 0, :height => 50, :width => 300), {:action => 'index', :controller => 'access'}, {:class => 'logo'} %>
+			<!--<h1><%= link_to("KittyFound.org", {:controller => 'access', :action => 'index'}, { :style=>'color:#FFFFFF;'}) %></h1>-->
 		</div>
 		<div id="account">
 			<% if  session[:user_id].present? %>
         	<%= link_to("My Account", {:controller => 'users', 
         												:action => 'account'}, 
-        												:class => 'back-link') %>
+        												:class => 'account-link') %>
       </br>
         	<%= link_to("Log out", {:controller => 'access', 
         												:action => 'logout'}, 
-        												:class => 'back-link') %>
+        												:class => 'account-link') %>
       
       <% else %>
         	<%= link_to("Login/Create Account", {:controller => 'access', 
         												:action => 'login'}, 
-        												:class => 'back-link') %>
+        												:class => 'account-link') %>
       <% end %>
 		</div>
+		<div>
+			<%= link_to("Breed Listing ", {:controller => 'cat_breeds', :action => 'index'},
+																			:class => 'breed-link')%>
+			</div>
 		<div id ="main">
 			<% if !flash[:notice].blank? %>
 	  		<div class="notice">
@@ -33,9 +39,6 @@
 			<div id="content">
 				<%= yield %>
 			</div>
-		</div>
-		<div id="bread_help">
-			<%= link_to("Breed Listing ", {:controller => 'cat_breeds', :action => 'index'})%>
 		</div>
 		<div id="footer">
 			<p id="copyright">&copy; kittyfound.org </p>

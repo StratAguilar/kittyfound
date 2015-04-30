@@ -7,6 +7,8 @@ light green:  #B6D491
 yellow:       #F2DC87
 dark brown:   #332318
 light brown:  #4C2516
+light blue:   #5D89B5;
+orange:		  #ff9933
 */
 
 html { height: 100%; width: 100%; }
@@ -18,29 +20,66 @@ img { border: none; }
 table { border-collapse: collapse; }
 table tr th, table tr td { vertical-align: top; text-align: left; 
   padding: 3px; }
-a, a:visited { color: #993120; }
-a:hover {}
+a, a:visited { color: orange; }
+a:hover { color: blue;}
+/*nav { text-align: center; padding-bottom: 10px; margin:30px 0 0; }
+nav ul { list-style: none; margin: 0 10px; padding: 0 ; color: orange; }
+nav li { display:inline-block; padding: 0 10px 0 10px; font-size: 1.25rem; }*/
 
 .account { padding-left: 50px; }
 
 .clear { clear: both; }
-.center { text-align: center; }
+.center { text-align: center; font-size: 20px; margin-bottom: 0; }
 .right { text-align: right;}
 .left {text-align: left;}
 
 .bread_help {text-align: right;} 
 /* Structure */
-#header { height: 4em; padding-top: 1em; text-align: center; 
-  background: #993120; color: #FFFFFF; }
-#header h1 { margin: 0; padding: 0; }
-#main { min-height: 500px; background: #F8F8F8; }
+#header { padding-top: 1em; padding-bottom: 1em; text-align: center; 
+  		  color: #FFFFFF; background-color: #5D89B5; }
+#header h1 { margin: 0, auto; padding: 0; }
+.account-link {font-size: 14px; display: block; float: right; padding-right: 10px}
+.breed-link {font-size: 14px; display: block; float: left; padding-right: 10px}
+.back-link { font-size: 14px; display: block; float: left; padding-right: 10px; 
+			 padding-top: 10px;}
+.logo img { margin: 0 auto; height:100px; padding: 0; }
+#main { min-height: 500px; background: #FFF; color: black; }
 #navigation { float: left; width: 180px; min-height: 480px; padding: 10px; 
-  background: #94B26F; color: #4C2516; }
+  			  background: #94B26F; color: #4C2516; }
 #content { padding: 10px; }
-#footer { clear: both; height: 2.5em; text-align: right;
-  background: #4C2516 url('/assets/images/footer_gradient.png') repeat-y 0 0; color: #F8F8F8; }
-#footer p { margin: 0; padding: 0.5em 1em; }
+.title-post { color:#F2DC87; }
 
+#footer { clear: both; text-align: right;
+		  color: #F8F8F8; background-color: #5D89B5; border-top: 1px solid gray;
+		  bottom: 0; height: 32px; width: 100%;}
+#footer p { display: block; width: 120px; margin: 0 auto; padding: 0.5em 1em; }
+#bread_help { padding-left: 10px; position: absolute; bottom: 40px; }
+
+/* home */
+.user { max-width: 980px; display: block; margin: 0 auto; }
+.user h2 { font-size: 2.5rem; }
+
+/* log in */
+.login { color: black; max-width: 800px; display: block; margin: 0 auto;}
+.login p { text-align: center; }
+
+/* new user */
+.User_new  { color: black; max-width: 980px; display: block; margin: 0 auto; }
+.User_new table { margin: 0 auto; }
+
+/* found/lost */
+.posts { display: block; max-width: 980px; margin: 0 auto; }
+.posts a { color: black; }
+
+/* cat breeds */
+.CatBreed { display: block; margin: 0 auto; max-width: 980px; }
+
+/* cat breeds new */
+.back-link {  clear: both; margin-bottom: 0;}
+.Breed { display: block; max-width: 980px; margin: 0 auto; text-align: center;}
+.Breed h2 { text-align: center; }
+
+.title-post { color:#F2DC87; }
 /* Navigation */
 #navigation ul { list-style: none; margin: 0; padding: 0; }
 #navigation ul li { margin-bottom: 0.5em; }
