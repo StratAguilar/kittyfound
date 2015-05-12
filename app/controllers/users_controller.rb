@@ -54,8 +54,8 @@ class UsersController < ApplicationController
   	flash[:noctice] = "Account Deleted"
   	redirect_to(:controller => 'access', :action => 'logout')
   end
-
-  def user_params
-  	params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :email, :username, :phone)
-  end
+  private
+    def user_params
+  	 params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :email, :username, :phone)
+    end
 end

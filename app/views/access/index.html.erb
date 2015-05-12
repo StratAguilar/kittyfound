@@ -6,5 +6,19 @@
   </br></br></br>
   <p class='center'><%= link_to("Lost Cats", {:controller => 'posts', :action => 'lost'})%> </p>
   <p class='center'><%= link_to("Found Cats", {:controller => 'posts', :action => 'found'})%> </p>
+</div>
+<br>
+</br>
+
+<div class = "image">
+  <h2> I'm Lost </h2>
+        <% if @post.image.present? %>
+          <%= image_tag @post.image.url(:large), :class => "image" %> 
+          <p class='center'>
+          <%= link_to("this is my cat!", {:controller => 'posts', :action => 'show', :id => @post.id})%>
+          </p>
+        <% else %>
+          <%= image_tag "blank_150.jpg" %>
+        <% end %>
 
 </div>

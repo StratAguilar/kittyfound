@@ -58,7 +58,12 @@ nav li { display:inline-block; padding: 0 10px 0 10px; font-size: 1.25rem; }*/
 /* home */
 .user { max-width: 980px; display: block; margin: 0 auto; }
 .user h2 { font-size: 2.5rem; }
-
+.image {
+  border: 1px; display: block;
+    margin: auto;
+    background-image: center;
+    max-width: 350px;
+  }
 /* log in */
 .login { color: black; max-width: 800px; display: block; margin: 0 auto;}
 .login p { text-align: center; }
@@ -89,3 +94,4 @@ nav li { display:inline-block; padding: 0 10px 0 10px; font-size: 1.25rem; }*/
 
 /* Content */
 #content h2 { color: #4C2516; }
+

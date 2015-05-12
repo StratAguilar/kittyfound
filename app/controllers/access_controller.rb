@@ -5,6 +5,8 @@ class AccessController < ApplicationController
 	before_action :confirm_logged_in, :except => [:index, :login, :attempt_login, :logout]
 	
   def index
+    @posting = Post.all.order("RAND()")
+    @post = @posting.first
   	# display text and links
   end
 
@@ -41,4 +43,6 @@ class AccessController < ApplicationController
   	redirect_to(:action => 'login')
 
   end
+
+
 end
